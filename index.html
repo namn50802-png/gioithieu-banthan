@@ -1,0 +1,384 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giới thiệu bản thân | Nguyễn Phương Nam</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f8f1;
+    color: #243d2c;
+    overflow-x: hidden;
+}
+
+/* THANH MENU */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(17, 53, 34, 0.92);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #a8e6a0;
+}
+
+/* TRANG CHỦ */
+.hero {
+    min-height: 100vh;
+    background:
+    linear-gradient(rgba(8, 38, 22, 0.55), rgba(8, 38, 22, 0.65)),
+    url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=85");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 100px 20px 50px;
+}
+
+.hero-content {
+    animation: appear 1.5s ease;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 7vw, 65px);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    background: #a8dba3;
+    color: #153c24;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    transform: translateY(-5px);
+    background: white;
+}
+
+/* CÁC PHẦN NỘI DUNG */
+section {
+    padding: 85px 10%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    color: #245d36;
+    margin-bottom: 45px;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    flex-wrap: wrap;
+}
+
+.about img {
+    width: 280px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px #b5cbb6;
+}
+
+.about-text {
+    max-width: 550px;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+/* THẺ THÔNG TIN */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 25px rgba(31, 89, 48, 0.2);
+}
+
+.card .icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #28633c;
+    margin-bottom: 12px;
+}
+
+.card p {
+    line-height: 1.7;
+}
+
+/* MỤC TIÊU */
+.goal {
+    background: #dfeedd;
+    text-align: center;
+    border-radius: 30px;
+    padding: 45px 25px;
+    line-height: 1.9;
+}
+
+/* LỜI NHẮN */
+.message {
+    background: linear-gradient(135deg, #245b36, #548c5b);
+    color: white;
+    text-align: center;
+    border-radius: 25px;
+    padding: 50px 25px;
+    font-size: 21px;
+    line-height: 1.8;
+}
+
+/* CHÂN TRANG */
+footer {
+    background: #153c24;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    line-height: 1.8;
+}
+
+/* HIỆU ỨNG */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media(max-width: 650px) {
+    nav {
+        padding: 15px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 13px;
+    }
+
+    section {
+        padding: 65px 6%;
+    }
+
+    .about img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">NAM 🌿</div>
+    <div>
+        <a href="#home">Trang chủ</a>
+        <a href="#about">Giới thiệu</a>
+        <a href="#hobby">Sở thích</a>
+        <a href="#goal">Mục tiêu</a>
+    </div>
+</nav>
+
+<header class="hero" id="home">
+    <div class="hero-content">
+        <h1>NGUYỄN PHƯƠNG NAM</h1>
+        <p>Chào mừng bạn đến với thế giới của tôi 🌱</p>
+        <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+            Khám phá thêm
+        </button>
+    </div>
+</header>
+
+<section id="about" class="hidden">
+    <h2 class="section-title">🌿 Giới thiệu bản thân</h2>
+
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=85" alt="Phong cảnh thiên nhiên">
+
+        <div class="about-text">
+            <h2>Xin chào mọi người!</h2>
+            <br>
+            <p>
+                Tôi tên là <b>Nguyễn Phương Nam</b>.
+                Hiện tại, tôi là học sinh trường
+                <b>THPT Số 1 Phan Bội Châu</b>.
+            </p>
+            <p>
+                Tôi là người vui vẻ, hòa đồng và có trách nhiệm.
+                Tuy đôi lúc còn rụt rè nhưng tôi luôn cố gắng
+                học hỏi, thay đổi và hoàn thiện bản thân.
+            </p>
+            <p>
+                Gia đình tôi có 4 thành viên. Đây là nguồn
+                động viên lớn giúp tôi cố gắng trong học tập
+                và cuộc sống.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="hobby" class="hidden">
+    <h2 class="section-title">🍃 Sở thích của tôi</h2>
+
+    <div class="cards">
+        <div class="card">
+            <div class="icon">🎧</div>
+            <h3>Nghe nhạc</h3>
+            <p>Giúp tôi thư giãn và có thêm năng lượng sau giờ học.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎬</div>
+            <h3>Xem phim</h3>
+            <p>Một cách giải trí và khám phá nhiều câu chuyện thú vị.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚽</div>
+            <h3>Bóng đá</h3>
+            <p>Giúp tôi rèn luyện sức khỏe và tinh thần đồng đội.</p>
+        </div>
+    </div>
+</section>
+
+<section class="hidden">
+    <h2 class="section-title">🌳 Điểm mạnh và điểm yếu</h2>
+
+    <div class="cards">
+        <div class="card">
+            <div class="icon">💪</div>
+            <h3>Điểm mạnh</h3>
+            <p>Có trách nhiệm, luôn cố gắng hoàn thành công việc được giao.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌱</div>
+            <h3>Điểm cần cải thiện</h3>
+            <p>Đôi lúc còn rụt rè, cần tự tin hơn khi giao tiếp.</p>
+        </div>
+    </div>
+</section>
+
+<section id="goal" class="hidden">
+    <h2 class="section-title">🎯 Ước mơ và mục tiêu</h2>
+
+    <div class="goal">
+        <h2>Chinh phục ước mơ đại học</h2>
+        <p>
+            Mục tiêu lớn nhất của tôi hiện tại là thi đỗ đại học.
+            Tôi sẽ không ngừng cố gắng học tập, rèn luyện
+            và phát triển bản thân để đạt được ước mơ.
+        </p>
+    </div>
+</section>
+
+<section class="hidden">
+    <div class="message">
+        <h2>💚 Thông điệp của tôi</h2>
+        <p>
+            "Hãy luôn tin tưởng vào bản thân,
+            không ngừng cố gắng và kiên trì theo đuổi ước mơ.
+            Mỗi sự cố gắng hôm nay sẽ tạo nên thành công ngày mai."
+        </p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 - Nguyễn Phương Nam</p>
+    <p>Cảm ơn bạn đã ghé thăm website của tôi! 🌿</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".hidden").forEach(element => {
+    observer.observe(element);
+});
+</script>
+
+</body>
+</html>
+```
